@@ -1,4 +1,4 @@
-#VIM Tous les jours (IN DEVELOPMENT)
+# VIM Tous les jours (IN DEVELOPMENT)
 
 ## Abstract
 
