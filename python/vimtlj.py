@@ -18,5 +18,11 @@ def create_diary_entry():
     year_dir = os.path.join(main_dir, str(now.year))
     if not os.path.exists(year_dir):
         os.mkdir(year_dir)
+    month_dir = os.path.join(year_dir, str(now.month))
+    if not os.path.exists(month_dir):
+        os.mkdir(month_dir)
+    day_file = os.path.join(month_dir, str(now.day) + ".md")
+    if not os.path.exists(day_file):
+        os.mknod(day_file)
     
 
