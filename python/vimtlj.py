@@ -23,6 +23,9 @@ def create_diary_entry( date ):
     day_file = os.path.join(month_dir, str(date.day) + ".md")
     if not os.path.exists(day_file):
         os.mknod(day_file)
+        f = open(day_file, 'a')
+        f.write("# " + date.strftime("%A, %d of %B %Y"))
+        f.close()
     vim.command(":e " + day_file)
 
 def create_diary_entry_for_today():
