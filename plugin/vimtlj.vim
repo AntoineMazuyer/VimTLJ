@@ -15,7 +15,12 @@ sys.path.insert(0, python_root_dir)
 import vimtlj
 EOF
 
-function! VimTLJAddDiaryEntry()
-    python3 vimtlj.create_diary_entry()
+function! VimTLJAddTodayDiaryEntry()
+    python3 vimtlj.create_diary_entry_for_today()
 endfunction
-command! -nargs=0 VimTLJAddDiaryEntry call VimTLJAddDiaryEntry()
+command! -nargs=0 VimTLJAddTodayDiaryEntry call VimTLJAddTodayDiaryEntry()
+
+function! VimTLJAddDiaryEntry( date )
+    python3 vimtlj.create_diary_entry_for_another_date()
+endfunction
+command! -nargs=1 VimTLJAddDiaryEntry call VimTLJAddDiaryEntry(<q-args>)
